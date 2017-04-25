@@ -1,0 +1,1 @@
+Bash script forr deploying NVidia-docker on a new 14.04/16.04/17.04 host
