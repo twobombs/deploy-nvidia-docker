@@ -5,7 +5,7 @@
 sudo apt-get update
 sudo apt-get -y install linux-image-extra-$(uname -r)
 sudo wget -qO- https://get.docker.com/ | sh
-sudo apt-get install nvidia-375 nvidia-cuda-toolkit nvidia-modprobe ubuntu-desktop 
+sudo apt-get -y install nvidia-375 nvidia-cuda-toolkit nvidia-modprobe ubuntu-desktop 
 wget -P /tmp https://github.com/NVIDIA/nvidia-docker/releases/download/v1.0.1/nvidia-docker_1.0.1-1_amd64.deb
 sudo dpkg -i /tmp/nvidia-docker*.deb && rm /tmp/nvidia-docker*.deb
 
