@@ -1,6 +1,6 @@
 FROM phusion/baseimage
 
-RUN apt-get update && apt-get upgrade -y && apt-get install -y ubuntu-desktop novnc
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get upgrade -y && apt-get install -y ubuntu-desktop novnc
 
 RUN NVIDIA_GPGKEY_SUM=d1be581509378368edeec8c1eb2958702feedf3bc3d17011adbf24efacce4ab5 && \
     NVIDIA_GPGKEY_FPR=ae09fe4bbd223a84b2ccfce3f60f4b3d7fa2af80 && \
