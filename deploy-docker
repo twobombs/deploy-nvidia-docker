@@ -1,6 +1,6 @@
 # install nvidia-docker host for use with gpu instance
 # tested on 14.04, 16.04 & 17.04; takes 10GB storage
-# setup: 4 cores, 4 GB RAM, 20Gb SSD storage and an NVidia GPU
+# setup: 2 cores, 4 GB RAM, 20Gb SSD storage and an NVidia GPU
 
 sudo apt-get update
 sudo apt-get -y install linux-image-extra-$(uname -r)
