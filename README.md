@@ -7,4 +7,4 @@ Contents:
 
 Start X CUDA session
 
-nvidia-docker run -d --privileged -v /tmp/.X11-unix:/tmp/.X11-unix:ro twobombs/deploy-nvidia-docker startx&&x11vnc
+nvidia-docker run -d -v /tmp/.X11-unix:/tmp/.X11-unix:ro twobombs/deploy-nvidia-docker vnc4server&&./root/noVNC/utils/launch.sh --vnc localhost:5901
