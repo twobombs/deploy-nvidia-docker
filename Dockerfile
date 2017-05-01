@@ -6,6 +6,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y xfce4 xfce4-good
 
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y x11vnc tightvncserver vnc4server novnc xvfb firefox mc lynx
 
+RUN cd /root && git clone git://github.com/novnc/noVNC
+
 COPY xorg.conf /usr/share/X11/xorg.conf.d/
 
 EXPOSE 5900 5901 6080
