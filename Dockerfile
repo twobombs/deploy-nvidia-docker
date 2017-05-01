@@ -6,8 +6,10 @@ RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y xfce4 xfce4-good
 
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y x11vnc tightvncserver vnc4server novnc xvfb firefox mc lynx
 
-RUN cd /root && git clone git://github.com/novnc/noVNC
+RUN cd /root && git clone git://github.com/novnc/noVNC && cp /root/noVNC/vnc.html /root/noVNC/index.html && mkdir /root/.vnc
 
 COPY xorg.conf /usr/share/X11/xorg.conf.d/
+COPY passwd /root/.vnc/
+COPY xstartup /root/.vnc/
 
 EXPOSE 5900 5901 6080
