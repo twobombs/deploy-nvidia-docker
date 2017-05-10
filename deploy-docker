@@ -2,13 +2,13 @@
 # tested on 14.04, 16.04 & 17.04; takes 10GB storage
 # setup: 2 cores, 4 GB RAM, 20Gb SSD storage and an NVidia GPU
 
-sudo add-apt-repository universe
-sudo add-apt-repository multiverse
-sudo add-apt-repository ppa:graphics-drivers/ppa
-sudo add-apt-repository trusty-backports main multiverse
+sudo add-apt-repository -y universe
+sudo add-apt-repository -y multiverse
+sudo add-apt-repository -y ppa:graphics-drivers/ppa
 sudo apt-get update
 sudo apt-get -y install linux-image-extra-$(uname -r)
 sudo wget -qO- https://get.docker.com/ | sh
-sudo apt-get -y install nvidia-375 nvidia-cuda-toolkit nvidia-modprobe ubuntu-desktop 
+sudo apt-get -y install nvidia-375 nvidia-cuda-toolkit ubuntu-desktop
+sudo apt-get -y install nvidia-modprobe
 wget -P /tmp https://github.com/NVIDIA/nvidia-docker/releases/download/v1.0.1/nvidia-docker_1.0.1-1_amd64.deb
 sudo dpkg -i /tmp/nvidia-docker*.deb && rm /tmp/nvidia-docker*.deb
