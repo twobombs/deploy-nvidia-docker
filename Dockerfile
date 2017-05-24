@@ -11,7 +11,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y xfce4 xfce4-good
 
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y x11vnc  tightvncserver vnc4server novnc xvfb firefox mc lynx
 
-RUN apt-get -f install libtasn1-3-bin
+RUN apt-get -y -f install libtasn1-3-bin
 
 RUN cd /root && wget https://bintray.com/tigervnc/stable/download_file?file_path=ubuntu-16.04LTS%2Famd64%2Ftigervncserver_1.8.0-1ubuntu1_amd64.deb &&git clone git://github.com/novnc/noVNC && cp /root/noVNC/vnc.html /root/noVNC/index.html && mkdir /root/.vnc
 
