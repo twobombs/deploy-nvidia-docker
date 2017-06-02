@@ -17,6 +17,8 @@ COPY tigervncserver_1.8.0-1ubuntu1_amd64.deb /root
 
 RUN cd /root &&dpkg -i tigervncserver_1.8.0-1ubuntu1_amd64.deb&&git clone git://github.com/novnc/noVNC && cp /root/noVNC/vnc.html /root/noVNC/index.html && mkdir /root/.vnc
 
+RUN systemctl disable lightdm.service
+
 COPY xorg.conf /usr/share/X11/xorg.conf.d/
 COPY passwd /root/.vnc/
 COPY xstartup /root/.vnc/
