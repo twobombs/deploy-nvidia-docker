@@ -1,9 +1,4 @@
 ![](https://img.shields.io/docker/build/jrottenberg/ffmpeg.svg)
-![ImageLayers Size](https://img.shields.io/imagelayers/image-size/_/ubuntu/latest.svg)
-![Docker Pulls](https://img.shields.io/docker/pulls/mashape/kong.svg)
-![ImageLayers Size](https://img.shields.io/imagelayers/image-size/_/ubuntu/latest.svg)
-![Docker Automated](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)
-![ImageLayers Size](https://img.shields.io/imagelayers/image-size/_/ubuntu/latest.svg)
 
 Contents:
 
