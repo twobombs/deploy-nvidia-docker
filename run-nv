@@ -1,0 +1,15 @@
+# X-run script for nvidia hosts
+
+# apt-get remove -y nvidia-375
+
+Xvfb :0 -screen 0 1280x720x24 -ac&
+
+export DISPLAY=:0&&startxfce4&
+
+sleep 10
+
+x0vncserver -display :0 -passwordfile ~/.vnc/passwd&
+/root/noVNC/utils/launch.sh --vnc localhost:5900
+
+echo "done"
+read n -1
