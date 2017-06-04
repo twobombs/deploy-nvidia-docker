@@ -8,8 +8,7 @@ Contents:
 
 Start X [CUDA] session
 
-[nvidia-]docker run -d -v /tmp/.X11-unix:/tmp/.X11-unix --device=/dev/dri:/dev/dri twobombs/deploy-nvidia-docker export LIBGL_ALWAYS_SOFTWARE=1&&Xvfb :0 -screen 0 1280x720x24 -ac&&
-export DISPLAY=:0&&startxfce4&&x0vncserver -display :0 -passwordfile ~/.vnc/passwd&&/root/noVNC/utils/launch.sh --vnc localhost:5900
+[nvidia-]docker run -d -v /tmp/.X11-unix:/tmp/.X11-unix --device=/dev/dri:/dev/dri twobombs/deploy-nvidia-docker [/root/run-nv]
 
 Initial vnc password is 00000000
 noVNC website is avaliable at port 6080
