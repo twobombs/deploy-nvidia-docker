@@ -21,6 +21,10 @@ RUN systemctl disable lightdm.service
 
 COPY run /root
 RUN chmod 755 /root/run
+
+COPY run-nv /root
+RUN chmod 755 /root/run-nv
+
 COPY xorg.conf /usr/share/X11/xorg.conf.d/
 COPY passwd /root/.vnc/
 COPY xstartup /root/.vnc/
@@ -28,3 +32,5 @@ COPY xstartup /root/.vnc/
 RUN chmod 755 /root/.vnc/xstartup
 
 EXPOSE 5900 6080
+
+ENTRYPOINT /root/run
