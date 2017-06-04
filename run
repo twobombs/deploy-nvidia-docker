@@ -2,7 +2,7 @@
 
 apt-get remove -y nvidia-375
 export LIBGL_ALWAYS_SOFTWARE=1&&Xvfb :0 -screen 0 1280x720x24 -ac&
-
+sleep 10
 export DISPLAY=:0&&unity&
 sleep 10
 x0vncserver -display :0 -passwordfile ~/.vnc/passwd&
