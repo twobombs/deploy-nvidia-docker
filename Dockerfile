@@ -20,7 +20,7 @@ RUN cd /root &&dpkg -i tigervncserver_1.8.0-1ubuntu1_amd64.deb&&git clone git://
 RUN systemctl disable lightdm.service
 
 COPY run /root
-RUN chmod /root/run 755
+RUN chmod 755 /root/run
 COPY xorg.conf /usr/share/X11/xorg.conf.d/
 COPY passwd /root/.vnc/
 COPY xstartup /root/.vnc/
