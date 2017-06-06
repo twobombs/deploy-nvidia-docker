@@ -13,6 +13,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y x11vnc  tightvnc
 
 RUN apt-get -y -f install libtasn1-3-bin && apt-get clean all
 
+RUN cd /root && wget http://upload.aspeedtech.com/BIOS/v103_linux_freebsd_solaris.zip && unzip /root/v103_linux_freebsd_solaris.zip
+
 RUN cd /root &&git clone git://github.com/novnc/noVNC && cp /root/noVNC/vnc.html /root/noVNC/index.html && mkdir /root/.vnc
 
 RUN systemctl disable lightdm.service
