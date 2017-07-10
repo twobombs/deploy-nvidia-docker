@@ -12,3 +12,5 @@ Start X [CUDA] session
 
 Initial vnc password is 00000000
 noVNC website is avaliable at port 6080
+
+Initial v0.1 released
