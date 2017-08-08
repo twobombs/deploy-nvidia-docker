@@ -17,7 +17,7 @@ RUN cd /root && wget http://upload.aspeedtech.com/BIOS/v103_linux_freebsd_solari
 
 RUN cd /root &&git clone git://github.com/novnc/noVNC && cp /root/noVNC/vnc.html /root/noVNC/index.html && mkdir /root/.vnc
 
-RUN cd /usr/local/cuda/samples && make TARGET_ARCH=x86_64
+RUN cd /usr/local/cuda/samples && find . -type f -execdir sed -i 's/UBUNTU_PKG_NAME = "nvidia-367"/UBUNTU_PKG_NAME = "nvidia-375"/g' '{}' \; && make TARGET_ARCH=x86_64
 
 RUN systemctl disable lightdm.service
 
