@@ -17,6 +17,8 @@ RUN cd /root && wget http://upload.aspeedtech.com/BIOS/v103_linux_freebsd_solari
 
 RUN cd /root &&git clone git://github.com/novnc/noVNC && cp /root/noVNC/vnc.html /root/noVNC/index.html && mkdir /root/.vnc
 
+RUN cd /usr/local/cuda/samples && make
+
 RUN systemctl disable lightdm.service
 
 COPY run /root
