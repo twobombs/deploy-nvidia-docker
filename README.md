@@ -8,7 +8,7 @@ Contents:
 
 Start X [CUDA] session
 
-[nvidia-]docker run -d --device=/dev/dri:/dev/dri twobombs/deploy-nvidia-docker [/root/run-nv]
+[nvidia-]docker run -d --device=/dev/dri:/dev/dri twobombs/deploy-nvidia-docker /root/run[-nv]
 
 Initial vnc password is 00000000
 noVNC website is avaliable at port 6080
