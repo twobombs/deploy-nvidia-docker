@@ -5,9 +5,9 @@ LABEL com.nvidia.volumes.needed="nvidia_driver"
 ENV PATH /usr/local/nvidia/bin:${PATH}
 ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64:${LD_LIBRARY_PATH}
 
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get upgrade -y && apt-get install -y git net-tools nvidia-375 cuda && apt-get clean all
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && add-apt-repository -y ppa:wine/wine-builds && dpkg --add-architecture i386 && apt-get upgrade -y && apt-get install -y git net-tools nvidia-375 qemu-kvm qemu virt-manager virt-viewer libvirt-bin && apt-get clean all
 
-RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y xfce4 xfce4-goodies ubuntu-desktop gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal libsdl1.2-dev mesa-utils && apt-get clean all
+RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y  --install-recommends wine-staging xfce4 xfce4-goodies ubuntu-desktop gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal libsdl1.2-dev mesa-utils && apt-get clean all
 
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y x11vnc  tightvncserver vnc4server novnc xvfb firefox mc lynx open-vm-tools && apt-get clean all
 
