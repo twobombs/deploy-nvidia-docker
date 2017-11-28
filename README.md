@@ -1,4 +1,3 @@
-![](https://img.shields.io/docker/build/jrottenberg/ffmpeg.svg)
 ![](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)
 
 Contents:
