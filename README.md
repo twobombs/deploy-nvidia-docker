@@ -12,4 +12,6 @@ Start X [CUDA] session
 Initial vnc password is 00000000
 noVNC website is avaliable at port 6080
 
-Initial v0.1 released
+- Initial v0.1 pre-release
+- Wine v0.2 addon pre-release
+- Nvidia-Docker 2.0 integration release
