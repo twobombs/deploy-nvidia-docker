@@ -8,7 +8,7 @@ export DISPLAY=:0&&unity&
 
 sleep 10
 
-vncserver -display :0 -passwordfile ~/.vnc/passwd&
+x0vncserver -display :0 -passwordfile ~/.vnc/passwd&
 
 libvirtd&
 
