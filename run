@@ -5,7 +5,7 @@ sleep 10
 export DISPLAY=:0&&startxfce4&
 sleep 10
 x0vncserver -display :0 -passwordfile ~/.vnc/passwd&
-libvirtd -d
+libvirtd -d && service virtlogd start && service libvirt-bin start
 /root/noVNC/utils/launch.sh --vnc localhost:5900
 echo "done"
 read n -1
