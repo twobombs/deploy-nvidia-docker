@@ -19,8 +19,6 @@ RUN cd /root &&git clone git://github.com/novnc/noVNC v1.0.0-testing.2 && mv v1.
 
 RUN cd /root &&wget http://archive.ubuntu.com/ubuntu/dists/trusty/main/installer-amd64/current/images/netboot/mini.iso
 
-RUN systemctl disable lightdm.service
-
 COPY run /root
 RUN chmod 755 /root/run
 
