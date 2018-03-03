@@ -1,4 +1,4 @@
-FROM nvidia/cuda:8.0-devel-ubuntu16.04
+FROM ubuntu:16.04
 
 LABEL com.nvidia.volumes.needed="nvidia_driver"
 
@@ -7,7 +7,7 @@ ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64:${LD_LIBRARY_P
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -y software-properties-common && add-apt-repository -y ppa:wine/wine-builds && dpkg --add-architecture i386 && apt-get upgrade -y && apt-get install -y git net-tools qemu-kvm qemu nvidia-modprobe virt-manager virt-viewer libvirt-bin net-tools && apt-get clean all
 
-RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y  --install-recommends xfce4 xfce4-goodies ubuntu-desktop cuda-samples-8-0 gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal libsdl1.2-dev mesa-utils && apt-get clean all
+RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y  --install-recommends xfce4 xfce4-goodies libsdl1.2-dev mesa-utils && apt-get clean all
 
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y x11vnc  tightvncserver vnc4server novnc xvfb firefox mc lynx open-vm-tools && apt-get clean all
 
