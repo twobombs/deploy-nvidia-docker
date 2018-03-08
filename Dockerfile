@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM nvidia/cuda:8.0-devel-ubuntu16.04
 
 LABEL com.nvidia.volumes.needed="nvidia_driver"
 
@@ -18,6 +18,8 @@ RUN cd /root && wget http://upload.aspeedtech.com/BIOS/v103_linux_freebsd_solari
 RUN cd /root &&git clone git://github.com/novnc/noVNC v1.0.0-testing.2 && mv v1.0.0-testing.2 noVNC && cp /root/noVNC/vnc.html /root/noVNC/index.html && mkdir /root/.vnc
 
 RUN cd /root &&wget http://archive.ubuntu.com/ubuntu/dists/trusty/main/installer-amd64/current/images/netboot/mini.iso
+
+RUN systemctl disable lightdm.service
 
 COPY run /root
 RUN chmod 755 /root/run
