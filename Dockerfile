@@ -32,5 +32,3 @@ COPY xstartup /root/.vnc/
 RUN chmod 755 /root/.vnc/xstartup
 
 EXPOSE 5900 6080
-
-ENTRYPOINT ["/root/run"]
