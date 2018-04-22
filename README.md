@@ -2,7 +2,7 @@
 
 Contents:
 
-- Bash scripts for deploying NVidia-Docker on new 14.04/16.04/17.04 hosts
+- Bash scripts for deploying NVidia-Docker on new 14.04/16.04/18.04 hosts
 - Dockerfile to create X-accelerated containers with novnc frontend, image hosted on Dockerhub
 
 Start X CUDA session
