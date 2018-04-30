@@ -19,7 +19,7 @@ RUN cd /root && wget http://upload.aspeedtech.com/BIOS/v103_linux_freebsd_solari
 
 RUN cd /root &&git clone git://github.com/novnc/noVNC v1.0.0-testing.2 && mv v1.0.0-testing.2 noVNC && cp /root/noVNC/vnc.html /root/noVNC/index.html && mkdir /root/.vnc
 
-RUN cd /root &&wget http://archive.ubuntu.com/ubuntu/dists/trusty/main/installer-amd64/current/images/netboot/mini.iso && wget http://www.luxrender.net/release/luxmark/v3.1/luxmark-linux64-v3.1.tar.bz2
+RUN cd /root &&wget http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso && wget http://www.luxrender.net/release/luxmark/v3.1/luxmark-linux64-v3.1.tar.bz2
 
 COPY run /root
 RUN chmod 755 /root/run
