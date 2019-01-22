@@ -1,4 +1,4 @@
-FROM nvidia/cuda:8.0-devel-ubuntu16.04
+FROM nvidia/cuda:9.2-devel-ubuntu18.04
 
 LABEL com.nvidia.volumes.needed="nvidia_driver"
 
