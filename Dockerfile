@@ -19,7 +19,7 @@ RUN apt-get -y remove xscreensaver
 
 RUN cd /root && wget http://upload.aspeedtech.com/BIOS/v103_linux_freebsd_solaris.zip && unzip /root/v103_linux_freebsd_solaris.zip
 
-RUN cd /root &&git clone git://github.com/novnc/noVNC v1.0.0-testing.2 && mv v1.0.0-testing.2 noVNC && cp /root/noVNC/vnc.html /root/noVNC/index.html && mkdir /root/.vnc
+RUN cd /root &&git clone git://github.com/novnc/noVNC v1.0.0 && mv v1.0.0 noVNC && cp /root/noVNC/vnc.html /root/noVNC/index.html && mkdir /root/.vnc
 
 RUN cd /root &&wget http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso && wget http://www.luxrender.net/release/luxmark/v3.1/luxmark-linux64-v3.1.tar.bz2
 
