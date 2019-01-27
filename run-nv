@@ -1,6 +1,6 @@
 # X-run script for nvidia hosts
 
-# apt-get remove -y nvidia-375
+rm /tmp/.X0-lock
 
 Xvfb :0 -screen 0 1280x720x24 -ac&
 
