@@ -6,7 +6,7 @@ ENV PATH /usr/local/nvidia/bin:${PATH}
 ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64:${LD_LIBRARY_PATH}
 
 # install baseline x, vnc and wine
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -y apt-utils software-properties-common && dpkg --add-architecture i386 && apt-get upgrade -y && apt-get install -y git wget curl net-tools qemu-kvm qemu nvidia-modprobe virt-manager virt-viewer libvirt-bin  bridge-utils linux-tools-$(uname -r) linux-tools-generic && apt-get clean all && apt -y autoremove
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -y apt-utils software-properties-common && dpkg --add-architecture i386 && apt-get upgrade -y && apt-get install -y git wget curl net-tools qemu-kvm qemu nvidia-modprobe virt-manager virt-viewer libvirt-bin  bridge-utils linux-tools-generic && apt-get clean all && apt -y autoremove
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y  --install-recommends xfce4 xfce4-goodies libsdl1.2-dev mesa-utils && apt-get clean all && apt -y autoremove
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y x11vnc  tightvncserver vnc4server novnc xvfb firefox mc lynx open-vm-tools ssh-askpass-gnome && apt-get clean all && apt -y autoremove
 RUN cp /usr/share/novnc/vnc.html /usr/share/novnc/index.html && mkdir /root/.vnc
