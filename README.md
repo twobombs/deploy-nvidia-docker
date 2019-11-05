@@ -7,7 +7,9 @@ Contents:
 
 Start X CUDA session
 
-docker run --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES='0,1' --device=/dev/dri:/dev/dri -d twobombs/deploy-nvidia-docker sh /root/run-nv
+docker run --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES='0,1' --device=/dev/dri:/dev/dri -d twobombs/deploy-nvidia-docker sh /root/run-nv  (on nvidia-docker2 18.03 or older)
+
+docker run --device=/dev/dri:/dev/dri -d twobombs/deploy-nvidia-docker sh /root/run-nv ( on Docker 19.03+ or newer )
 
 Initial vnc password is 00000000
 noVNC website is avaliable at port 6080
@@ -16,4 +18,4 @@ noVNC website is avaliable at port 6080
 - Wine v0.2 addon pre-release
 - Nvidia-Docker 2.0 integration release
 
-Because of dockerd integration with nvidia-docker2, Rancher now also plays nice with NV GPU container instances
+Because of Docker integration with nvidia, all orchestrators, including Rancher, should play nice with NV GPU container instances.
