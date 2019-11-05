@@ -17,5 +17,6 @@ noVNC website is avaliable at port 6080
 - Initial v0.1 pre-release
 - Wine v0.2 addon pre-release
 - Nvidia-Docker 2.0 integration release
+- Docker 19.03+ NV integration
 
 Because of Docker integration with nvidia, all orchestrators, including Rancher, should play nice with NV GPU container instances.
