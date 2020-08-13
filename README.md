@@ -9,7 +9,7 @@ Start X CUDA session
 
 docker run --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES='0,1' --device=/dev/dri:/dev/dri -d twobombs/deploy-nvidia-docker sh /root/run-nv  (on nvidia-docker2 18.03 or older)
 
-docker run --device=/dev/dri:/dev/dri -d twobombs/deploy-nvidia-docker sh /root/run-nv ( on Docker 19.03+ or newer )
+docker run --gpus all --device=/dev/dri:/dev/dri -d twobombs/deploy-nvidia-docker sh /root/run-nv ( on Docker 19.03+ or newer )
 
 Initial vnc password is 00000000
 noVNC website is avaliable at port 6080
