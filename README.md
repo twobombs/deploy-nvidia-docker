@@ -14,6 +14,7 @@ docker run --device=/dev/dri:/dev/dri -d twobombs/deploy-nvidia-docker sh /root/
 Initial vnc password is 00000000
 noVNC website is avaliable at port 6080
 
+- Wine 5.x and Steam added
 - Upgrade image to CUDA 11.0 and Ubuntu 20.04
 - Docker 19.03+ NV integration
 - Nvidia-Docker 2.0 integration release
