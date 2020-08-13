@@ -11,7 +11,7 @@ RUN dpkg --add-architecture i386 && apt-get update && export DEBIAN_FRONTEND=non
 # install baseline x, vnc
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -y apt-utils software-properties-common && dpkg --add-architecture i386 && apt-get upgrade -y && apt-get install -y git wget curl net-tools qemu-kvm qemu nvidia-modprobe qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager linux-tools-generic && apt-get clean all && apt -y autoremove
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y  --install-recommends xfce4 xfce4-goodies libsdl1.2-dev mesa-utils && apt-get clean all && apt -y autoremove
-RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y x11vnc  tightvncserver vnc4server novnc xvfb firefox mc lynx open-vm-tools ssh-askpass-gnome && apt-get clean all && apt -y autoremove
+RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y x11vnc  tightvncserver novnc xvfb firefox mc lynx open-vm-tools ssh-askpass-gnome && apt-get clean all && apt -y autoremove
 RUN cp /usr/share/novnc/vnc.html /usr/share/novnc/index.html && mkdir /root/.vnc
 
 # install wine32 wine64 steam
