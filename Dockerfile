@@ -6,7 +6,7 @@ ENV PATH /usr/local/nvidia/bin:${PATH}
 ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64:${LD_LIBRARY_PATH}
 
 # install glvnd
-RUN dpkg --add-architecture i386 && apt-get update && apt install -y software-properties-common && add-apt-repository multiverse && apt-get update && apt-get install -y --no-install-recommends pkg-config libglvnd-dev libglvnd-dev:i386 libgl1-mesa-dev libgl1-mesa-dev:i386 libegl1-mesa-dev libegl1-mesa-dev:i386 libgles2-mesa-dev libgles2-mesa-dev:i386 && apt-get clean all
+RUN dpkg --add-architecture i386 && apt-get update && export DEBIAN_FRONTEND=noninteractive && apt install -y software-properties-common && add-apt-repository multiverse && apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -y --no-install-recommends pkg-config libglvnd-dev libglvnd-dev:i386 libgl1-mesa-dev libgl1-mesa-dev:i386 libegl1-mesa-dev libegl1-mesa-dev:i386 libgles2-mesa-dev libgles2-mesa-dev:i386 && apt-get clean all && apt -y autoremove
 
 # install baseline x, vnc
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -y apt-utils software-properties-common && dpkg --add-architecture i386 && apt-get upgrade -y && apt-get install -y git wget curl net-tools qemu-kvm qemu nvidia-modprobe virt-manager virt-viewer libvirt-bin  bridge-utils linux-tools-generic && apt-get clean all && apt -y autoremove
@@ -15,10 +15,10 @@ RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y x11vnc  tightvnc
 RUN cp /usr/share/novnc/vnc.html /usr/share/novnc/index.html && mkdir /root/.vnc
 
 # install wine32 wine64 steam
-RUN apt-get -y -f install libtasn1-bin && apt-get update && apt-get install -y wine32 wine64 steam && apt-get clean all && apt -y autoremove
+RUN export DEBIAN_FRONTEND=noninteractive && apt-get -y -f install libtasn1-bin && apt-get update && apt-get install -y wine32 wine64 steam && apt-get clean all && apt -y autoremove
 
 # add system frameworks
-RUN apt-get -y -f install  lm-sensors hddtemp python3-pip clinfo freeglut3 && apt-get clean all && apt -y autoremove
+RUN export DEBIAN_FRONTEND=noninteractive && apt-get -y -f install  lm-sensors hddtemp python3-pip clinfo freeglut3 && apt-get clean all && apt -y autoremove
 
 # add OCL dev
 # RUN apt-get -y -f install ocl-icd-libopencl1 opencl-headers ocl-icd-opencl-dev opencl-icd-* && apt-get clean all && apt -y autoremove
