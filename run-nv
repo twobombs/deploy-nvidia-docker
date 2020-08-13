@@ -4,7 +4,7 @@ rm /tmp/.X0-lock
 
 Xvfb :0 -screen 0 1280x720x24 -ac&
 
-export DISPLAY=:0&&unity&
+export DISPLAY=:0&&startxfce4&
 
 sleep 10
 
