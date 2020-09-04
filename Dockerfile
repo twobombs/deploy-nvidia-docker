@@ -20,11 +20,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && apt-get -y -f install libtasn1-bin 
 # add system frameworks
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get -y -f install  lm-sensors hddtemp python3-pip clinfo freeglut3 && apt-get clean all && apt -y autoremove
 
-# add OCL dev
-# RUN apt-get -y -f install ocl-icd-libopencl1 opencl-headers ocl-icd-opencl-dev opencl-icd-* && apt-get clean all && apt -y autoremove
-
 # cleanup idle cpu usage
-RUN apt-get -y remove xscreensaver
+# RUN apt-get -y remove xscreensaver
 
 #copy run scripts
 COPY run /root
