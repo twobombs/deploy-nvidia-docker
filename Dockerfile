@@ -6,7 +6,7 @@ ENV PATH /usr/local/nvidia/bin:${PATH}
 ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64:${LD_LIBRARY_PATH}
 
 # install glvnd
-RUN dpkg --add-architecture i386 && apt-get update && export DEBIAN_FRONTEND=noninteractive && apt install -o APT::Immediate-Configure=false -f -y software-properties-common && add-apt-repository multiverse && apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -y --no-install-recommends pkg-config libglvnd-dev libglvnd-dev:i386 libgl1-mesa-dev libgl1-mesa-dev:i386 libegl1-mesa-dev libegl1-mesa-dev:i386 libgles2-mesa-dev libgles2-mesa-dev:i386 && apt-get -f -y install && dpkg --configure -a && apt-get clean all && apt -y autoremove
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt install -y software-properties-common && add-apt-repository multiverse && apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -y --no-install-recommends pkg-config libglvnd-dev libgl1-mesa-dev libegl1-mesa-dev libgles2-mesa-dev && apt-get -f -y install && dpkg --configure -a && apt-get clean all && apt -y autoremove
 
 # install NV samples
 # RUN git clone https://github.com/NVIDIA/cuda-samples.git
