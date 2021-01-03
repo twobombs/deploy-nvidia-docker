@@ -24,8 +24,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && apt-get -y -f install libtasn1-bin 
 # add system frameworks
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get -y -f install  lm-sensors hddtemp python3-pip clinfo freeglut3 && apt-get clean all && apt -y autoremove
 
-# cleanup idle cpu usage
-# RUN apt-get -y remove xscreensaver
+# cleanup idle shutdown
+RUN apt-get -y remove xfce4-power-manager
 
 #copy run scripts
 COPY run /root
