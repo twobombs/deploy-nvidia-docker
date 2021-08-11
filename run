@@ -1,6 +1,6 @@
 # X-run script for non-nvidia hosts
 rm /tmp/.X0-lock
-export LIBGL_ALWAYS_SOFTWARE=1&&Xvfb :0 -screen 0 1280x720x24 -ac&
+export LIBGL_ALWAYS_SOFTWARE=1&&Xvfb :0 -screen 0 1920x1080x32 -ac&
 sleep 10
 export DISPLAY=:0&&startxfce4&
 x0vncserver -display :0 -passwordfile /root/.vnc/passwd&
