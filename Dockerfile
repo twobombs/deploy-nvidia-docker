@@ -18,9 +18,9 @@ RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y  --install-recom
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y x11vnc  tightvncserver tigervnc-scraping-server novnc xvfb xterm firefox mc lynx open-vm-tools ssh-askpass-gnome && apt-get clean all && apt -y autoremove
 RUN cp /usr/share/novnc/vnc.html /usr/share/novnc/index.html && mkdir /root/.vnc
 
-# install wine32 wine64 steam
-RUN export DEBIAN_FRONTEND=noninteractive && apt-get -y -f install libtasn1-bin && apt-get update && apt-get install -y wine32 wine64 steam && apt-get clean all && apt -y autoremove
-
+# install wine32 wine64 steam lutris
+RUN export DEBIAN_FRONTEND=noninteractive && apt-get -y -f install libtasn1-bin && apt-get update && apt-get install -y wine32 wine64 steam && apt clean all && apt -y autoremove
+RUN export DEBIAN_FRONTEND=noninteractive && add-apt-repository ppa:lutris-team/lutris && apt update && apt install lutris && apt clean all && apt -y autoremove
 # add system frameworks
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get -y -f install  lm-sensors hddtemp python3-pip clinfo freeglut3 && apt-get clean all && apt -y autoremove
 
