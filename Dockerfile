@@ -20,9 +20,9 @@ RUN cp /usr/share/novnc/vnc.html /usr/share/novnc/index.html && mkdir /root/.vnc
 
 # install wine32 wine64 steam lutris
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get -y -f install libtasn1-bin && apt-get update && apt-get install -y wine32 wine64 steam && apt clean all && apt -y autoremove
-RUN export DEBIAN_FRONTEND=noninteractive && add-apt-repository ppa:lutris-team/lutris && apt update && apt install lutris && apt clean all && apt -y autoremove
+RUN export DEBIAN_FRONTEND=noninteractive && add-apt-repository ppa:lutris-team/lutris && apt update && apt -y install lutris && apt clean all && apt -y autoremove
 # add system frameworks
-RUN export DEBIAN_FRONTEND=noninteractive && apt-get -y -f install  lm-sensors hddtemp python3-pip clinfo freeglut3 && apt-get clean all && apt -y autoremove
+RUN export DEBIAN_FRONTEND=noninteractive && apt-get -y -f install lm-sensors hddtemp python3-pip clinfo freeglut3 && apt-get clean all && apt -y autoremove
 
 # cleanup idle shutdown
 RUN apt-get -y remove xfce4-power-manager
