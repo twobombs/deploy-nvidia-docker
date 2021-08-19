@@ -1,8 +1,8 @@
 FROM twobombs/deploy-nvidia-docker
 
 # install wine32 wine64 steam lutris
-RUN export DEBIAN_FRONTEND=noninteractive && apt-get -y -f install libtasn1-bin && apt-get update && apt-get install -y wine32 wine64 steam && apt clean all && apt -y autoremove
-RUN export DEBIAN_FRONTEND=noninteractive && add-apt-repository ppa:lutris-team/lutris && apt update && apt -y install lutris && apt clean all && apt -y autoremove
+RUN export DEBIAN_FRONTEND=noninteractive && add-apt-repository ppa:lutris-team/lutris && apt-get -y -f install libtasn1-bin && apt-get update && apt-get install -y wine32 wine64 steam && apt clean all && apt -y autoremove
+RUN export DEBIAN_FRONTEND=noninteractive && apt update && apt -y install lutris && apt clean all && apt -y autoremove
 
 EXPOSE 5900 6080
 ENTRYPOINT /root/run-nv
