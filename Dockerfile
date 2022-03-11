@@ -1,4 +1,4 @@
-FROM nvidia/cudagl:11.4.2-base-ubuntu20.04
+FROM nvidia/cudagl:11.4.2-devel-ubuntu20.04
 
 LABEL com.nvidia.volumes.needed="nvidia_driver"
 
