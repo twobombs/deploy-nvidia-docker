@@ -4,14 +4,18 @@ Contents:
 
 - Bash scripts for deploying NVidia-Docker on new 14.04/16.04/18.04/20.04 hosts
 - Dockerfile to create X-accelerated containers with novnc frontend, image hosted on Dockerhub
+- comes in the following flavours :latest for runtime :dev developer-tools and :minimum tag for minimum CPU-only with user jail
 
 Start X CUDA session
 
-On Docker 19.03+ or newer
+With Nvidia Docker enabled
 - docker run --gpus all --device=/dev/dri:/dev/dri -d twobombs/deploy-nvidia-docker sh /root/run-nv
 
-On nvidia-docker2 18.03 or older
-- docker run --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES='0,1' --device=/dev/dri:/dev/dri -d twobombs/deploy-nvidia-docker sh /root/run-nv
+Docker only
+- docker run --device=/dev/dri:/dev/dri -d twobombs/deploy-nvidia-docker sh /root/run
+
+Minimalistic Docker CPU-only version with user jailed in xterm
+- docker run -d twobombs/deploy-nvidia-docker:minimal
 
 Initial vnc password is 00000000
 noVNC website is avaliable at port 6080
