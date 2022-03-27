@@ -5,7 +5,7 @@ sleep 10
 export DISPLAY=:0&&startx&
 x0vncserver -display :0 -passwordfile /root/.vnc/passwd&
 /usr/share/novnc/utils/launch.sh --vnc localhost:5900
-export DISPLAY=:0&&xterm -e "xset s off" && export DISPLAY=:0&&xterm -maximized -e "sudo su -c '/bin/bash' -s /bin/bash user"
+export DISPLAY=:0&&xterm -e "xset s off" && export DISPLAY=:0 && export HOME=/home/user && xterm -maximized -e "sudo su -c '/bin/bash' -s /bin/bash user"
 echo "done"
 
 tail -f /dev/null
