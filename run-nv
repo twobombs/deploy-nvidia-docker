@@ -1,17 +1,12 @@
 # X-run script for nvidia hosts
-
 rm /tmp/.X0-lock
 
 Xvfb :0 -screen 0 1920x1080x24+32 -ac&
-
 export DISPLAY=:0&&startxfce4&
 
 sleep 10
 
 x0vncserver -display :0 -passwordfile ~/.vnc/passwd&
-
-libvirtd -d
-
 /usr/share/novnc/utils/launch.sh --vnc localhost:5900
 
 export DISPLAY=:0&&xterm -e "xset s off"
