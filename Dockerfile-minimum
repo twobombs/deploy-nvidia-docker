@@ -1,4 +1,4 @@
-FROM ubuntu:21.04
+FROM ubuntu:20.04
 
 # install minimum reqs
 RUN apt update && export DEBIAN_FRONTEND=noninteractive && apt install -y software-properties-common sudo && add-apt-repository multiverse && apt update && export DEBIAN_FRONTEND=noninteractive && apt install -y --no-install-recommends pkg-config && apt -f -y install && dpkg --configure -a && apt clean all && apt -y autoremove
