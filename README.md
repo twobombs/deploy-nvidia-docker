@@ -2,7 +2,7 @@
 
 Contents:
 
-- Bash scripts for deploying NVidia-Docker on new 14.04/16.04/18.04/20.04 hosts
+- Bash scripts for deploying NVidia-Docker on new 14.04/16.04/18.04/20.04/22.04 hosts
 - Dockerfile to create X-accelerated containers with novnc frontend, image hosted on Dockerhub
 - comes in the following flavours :latest for runtime :dev developer-tools and :minimum tag for minimum CPU-only with user jail
 
@@ -23,6 +23,7 @@ noVNC website is avaliable at port 6080
 <img width="1435" alt="Screenshot 2021-05-04 at 15 10 27" src="https://user-images.githubusercontent.com/12692227/117008533-21d79280-aceb-11eb-993a-efa7d1123a1f.png">
 
 Version history:
+- Upgrade cpu only image to Ubuntu 22.04
 - Minimalistic CPU-only jail version added
 - Dev and Runtime version separated
 - Upgrade image to CUDA 11.0 and Ubuntu 20.04
