@@ -25,6 +25,11 @@ RUN cp /usr/share/novnc/vnc.html /usr/share/novnc/index.html && mkdir /root/.vnc
 # add system frameworks
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get -y -f install lm-sensors hddtemp python3-pip clinfo freeglut3 && apt-get clean all && apt -y autoremove
 
+# get chrome-repo in apt
+RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
+RUN echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
+RUN apt update && apt install -y google-chrome-stable
+
 # cleanup idle shutdown
 RUN apt-get -y remove xfce4-power-manager
 
