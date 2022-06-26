@@ -18,12 +18,12 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt install -y so
 
 # install baseline x, vnc
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -y apt-utils software-properties-common && dpkg --add-architecture i386 && apt-get update -y && apt-get install -y git wget curl net-tools qemu-kvm qemu nvidia-modprobe qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager linux-tools-generic && apt-get clean all && apt -y autoremove
-RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y  --install-recommends xfce4 xfce4-goodies libsdl1.2-dev mesa-utils libgl1-mesa-dev libegl1-mesa-dev libgles2-mesa-dev && apt-get clean all && apt -y autoremove
+RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y  --install-recommends xrdp xfce4 xfce4-goodies libsdl1.2-dev mesa-utils libgl1-mesa-dev libegl1-mesa-dev libgles2-mesa-dev && apt-get clean all && apt -y autoremove
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y x11vnc  tightvncserver tigervnc-scraping-server novnc xvfb xterm firefox mc lynx open-vm-tools ssh-askpass-gnome && apt-get clean all && apt -y autoremove
 RUN cp /usr/share/novnc/vnc.html /usr/share/novnc/index.html && mkdir /root/.vnc
 
 # add system frameworks
-RUN export DEBIAN_FRONTEND=noninteractive && apt-get -y -f install xrdp lm-sensors hddtemp python3-pip clinfo freeglut3 && apt-get clean all && apt -y autoremove
+RUN export DEBIAN_FRONTEND=noninteractive && apt-get -y -f install lm-sensors hddtemp python3-pip clinfo freeglut3 && apt-get clean all && apt -y autoremove
 
 # get chrome-repo in apt
 RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
