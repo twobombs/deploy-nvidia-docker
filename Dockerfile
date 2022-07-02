@@ -12,7 +12,7 @@ RUN apt-get clean && \
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt install -y software-properties-common && add-apt-repository multiverse && apt update && export DEBIAN_FRONTEND=noninteractive && apt-get install -y --no-install-recommends pkg-config libglvnd-dev && apt-get -f -y install && dpkg --configure -a && apt-get clean all && apt -y autoremove
 # add new mesa+zink framework for opengl over vulkan
-RUN add-apt-repository ppa:kisak/kisak-mesa -y && apt update && apt-upgrade && apt clean all && apt -y autoremove
+RUN add-apt-repository ppa:kisak/kisak-mesa -y && apt update && apt upgrade && apt clean all && apt -y autoremove
 
 # install baseline x, vnc
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -y apt-utils software-properties-common && dpkg --add-architecture i386 && apt-get update -y && apt-get install -y git wget curl net-tools qemu-kvm qemu nvidia-modprobe qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager linux-tools-generic && apt-get clean all && apt -y autoremove
