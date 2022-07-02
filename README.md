@@ -18,7 +18,8 @@ Minimalistic Docker CPU-only version with user jailed in xterm
 - docker run -d twobombs/deploy-nvidia-docker:minimal
 
 Initial vnc password is 00000000
-noVNC website is avaliable at port 6080
+- noVNC website is avaliable at port 6080 
+- xRDP running at port 3389 to vnc 127.0.0.1:5900
 
 <img width="1435" alt="Screenshot 2021-05-04 at 15 10 27" src="https://user-images.githubusercontent.com/12692227/117008533-21d79280-aceb-11eb-993a-efa7d1123a1f.png">
 
