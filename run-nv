@@ -8,6 +8,7 @@ sleep 10
 
 x0vncserver -display :0 -passwordfile ~/.vnc/passwd&
 /usr/share/novnc/utils/launch.sh --vnc localhost:5900
+
 service xrdp start && xrdp &
 pulseaudio -D --system && sunshine &
 
