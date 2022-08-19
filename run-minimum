@@ -13,5 +13,7 @@ service xrdp start && xrdp &
 # qv4l2 &
 
 export DISPLAY=:0&&xterm -e "xset s off" && export HOME=/home/user && export DISPLAY=:0 && xterm -maximized -e "sudo su -c '/bin/bash' -s /bin/bash user"
+export DISPLAY=:0&&xterm -e "neofetch && tail -f /dev/null" &
 
 echo "done"
+tail -f /dev/null
