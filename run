@@ -12,6 +12,7 @@ service xrdp start && xrdp &
 pulseaudio -D --system && sunshine &
 
 export DISPLAY=:0&&xterm -e "xset s off"
+export DISPLAY=:0&&xterm -e "neofetch && tail -f /dev/null" &
 
 echo "done"
 
