@@ -5,7 +5,7 @@ Xvfb :0 -screen 0 1920x1080x24+32 -ac && service xrdp start &
 sleep 10
 export DISPLAY=:0&&startxfce4&
 x0vncserver -display :0 -passwordfile /root/.vnc/passwd&
-libvirtd -d && service virtlogd start && service libvirt-bin start && brctl addbr br0 
+# libvirtd -d && service virtlogd start && service libvirt-bin start && brctl addbr br0 
 /usr/share/novnc/utils/launch.sh --vnc localhost:5900
 
 service xrdp start && xrdp &
