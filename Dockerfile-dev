@@ -2,6 +2,9 @@ FROM nvidia/cudagl:11.4.2-devel-ubuntu20.04
 
 LABEL com.nvidia.volumes.needed="nvidia_driver"
 
+# aging 20.04 gl without succesor need upgrades
+RUN apt update && apt -y upgrade && apt clean all
+
 ENV PATH /usr/local/nvidia/bin:${PATH}
 ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64:${LD_LIBRARY_PATH}
 
