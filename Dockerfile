@@ -6,7 +6,7 @@ ENV PATH /usr/local/nvidia/bin:${PATH}
 ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64:${LD_LIBRARY_PATH}
 
 # aging 20.04 gl without succesor need upgrades
-RUN apt update && apt -y upgrade && apt clean all
+# RUN apt update && apt -y upgrade && apt clean all
 
 # install glvnd ( temp key fix )
 RUN apt-get clean && \
