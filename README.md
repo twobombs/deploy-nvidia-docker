@@ -24,6 +24,8 @@ Initial vnc password is 00000000
 <img width="1435" alt="Screenshot 2021-05-04 at 15 10 27" src="https://user-images.githubusercontent.com/12692227/117008533-21d79280-aceb-11eb-993a-efa7d1123a1f.png">
 
 Version history:
+- Upgrade CUDA version to 12.1
+- Upgrade dev and latest image to Ubuntu 22.04
 - Upgrade cpu only image to Ubuntu 22.04
 - Minimalistic CPU-only jail version added
 - Dev and Runtime version separated
