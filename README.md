@@ -9,7 +9,7 @@ Contents:
 Start X CUDA session
 
 With Nvidia Docker enabled
-- docker run --gpus all --device=/dev/dri:/dev/dri -d twobombs/deploy-nvidia-docker sh /root/run-nv
+- docker run --gpus all --device=/dev/dri:/dev/dri -d twobombs/deploy-nvidia-docker
 
 Docker only
 - docker run --device=/dev/dri:/dev/dri -d twobombs/deploy-nvidia-docker sh /root/run
