@@ -12,7 +12,7 @@ With Nvidia Docker enabled
 - docker run --gpus all --device=/dev/dri:/dev/dri -d twobombs/deploy-nvidia-docker
 
 Docker only
-- docker run --device=/dev/dri:/dev/dri -d twobombs/deploy-nvidia-docker sh /root/run
+- docker run --device=/dev/dri:/dev/dri -d twobombs/deploy-nvidia-docker
 
 Minimalistic Docker CPU-only version with user jailed in xterm
 - docker run -d twobombs/deploy-nvidia-docker:minimal
