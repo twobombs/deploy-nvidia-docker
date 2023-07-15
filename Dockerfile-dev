@@ -1,4 +1,4 @@
-FROM nvidia/cuda:12.1.1-devel-ubuntu20.04
+FROM nvidia/cuda:12.1.1-devel-ubuntu22.04
 
 LABEL com.nvidia.volumes.needed="nvidia_driver"
 
@@ -10,9 +10,9 @@ ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64:${LD_LIBRARY_P
 
 # uninstall python3.8 and fetch python 3.9
 #
-RUN export DEBIAN_FRONTEND=noninteractive && apt remove -y python3 && apt install -y software-properties-common && apt clean all
-RUN add-apt-repository -y ppa:deadsnakes/ppa
-RUN apt update && apt install -y python3.9 && ln -sf /usr/bin/python3.9 /usr/bin/python
+# RUN export DEBIAN_FRONTEND=noninteractive && apt remove -y python3 && apt install -y software-properties-common && apt clean all
+# RUN add-apt-repository -y ppa:deadsnakes/ppa
+# RUN apt update && apt install -y python3.9 && ln -sf /usr/bin/python3.9 /usr/bin/python
 
 # install glvnd ( + temp nv repo key fix )
 RUN apt-get clean && \
