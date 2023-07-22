@@ -3,7 +3,7 @@ FROM nvidia/cuda:12.1.1-devel-ubuntu20.04
 LABEL com.nvidia.volumes.needed="nvidia_driver"
 
 # upgrades
-RUN apt update && && export DEBIAN_FRONTEND=noninteractive && apt -y upgrade && apt clean all
+RUN apt update && export DEBIAN_FRONTEND=noninteractive && apt -y upgrade && apt clean all
 
 ENV PATH /usr/local/nvidia/bin:${PATH}
 ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64:${LD_LIBRARY_PATH}
