@@ -3,7 +3,7 @@ FROM nvidia/cuda:12.1.1-devel-ubuntu20.04
 LABEL com.nvidia.volumes.needed="nvidia_driver"
 
 # upgrades
-RUN apt update && apt -y upgrade && apt clean all
+RUN apt update && && export DEBIAN_FRONTEND=noninteractive && apt -y upgrade && apt clean all
 
 ENV PATH /usr/local/nvidia/bin:${PATH}
 ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64:${LD_LIBRARY_PATH}
@@ -20,7 +20,7 @@ RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 RUN apt-get update && apt install -y software-properties-common && add-apt-repository multiverse && apt update && export DEBIAN_FRONTEND=noninteractive && apt-get install -y --no-install-recommends pkg-config libglvnd-dev && apt-get -f -y install && dpkg --configure -a && apt-get clean all && apt -y autoremove
 
-RUN add-apt-repository ppa:kisak/kisak-mesa -y && apt update && apt -y upgrade && apt clean all && apt -y autoremove
+RUN add-apt-repository ppa:kisak/kisak-mesa -y && apt update && export DEBIAN_FRONTEND=noninteractive && apt -y upgrade && apt clean all && apt -y autoremove
 
 # install NV samples, toolkit
 # RUN git clone https://github.com/NVIDIA/cuda-samples.git
