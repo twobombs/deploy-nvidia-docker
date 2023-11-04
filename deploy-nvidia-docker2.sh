@@ -16,5 +16,5 @@ distribution=$(. /etc/os-release;echo ubuntu22.04) \
             sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
 
 sudo apt-get update
-sudo apt-get install nvidia-docker2
-sudo pkill -SIGHUP dockerd
+sudo apt-get -y install nvidia-docker2
+sudo service docker restart
