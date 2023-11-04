@@ -2,7 +2,7 @@
 
 Contents:
 
-- Bash scripts for deploying NVidia-Docker on [Ubuntu](https://github.com/twobombs/deploy-nvidia-docker/blob/master/deploy-nvidia-docker2)
+- Bash script for deploying NVidia-Docker2 on [Ubuntu](https://github.com/twobombs/deploy-nvidia-docker/blob/master/deploy-nvidia-docker2.sh)
 - Dockerfile to create X-accelerated containers with novnc frontend, image hosted on [Dockerhub](https://hub.docker.com/r/twobombs/deploy-nvidia-docker)
 - comes in the following flavours `:latest` for runtime `:dev` developer-tools and `:minimum` tag for minimum CPU-only with user jail
 
