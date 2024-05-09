@@ -48,6 +48,11 @@ RUN apt-get -y remove xfce4-power-manager
 # gnome-terminal invocation fix
 RUN apt install -y locales && apt remove -y gnome-terminal && apt purge -y gnome-terminal && apt install -y gnome-terminal 
 
+# set desktop background
+COPY teleportation.jpg /
+RUN apt install -y xwallpaper && apt clean all
+RUN xwallpaper --center /teleportation.jpg
+
 #copy run scripts
 COPY run /root
 RUN chmod 755 /root/run
