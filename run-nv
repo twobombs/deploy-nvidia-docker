@@ -14,12 +14,9 @@ pulseaudio -D --system && sunshine &
 
 export DISPLAY=:0&&xterm -e "xset s off"
 export DISPLAY=:0&&xterm -e "neofetch && tail -f /dev/null" &
-echo "done"
 
-for x in "${xres[@]}"
-do
-    xfconf-query --channel xfce4-desktop --property $x --set "/teleportation.jpg"
-done
-xwallpaper --center /teleportation.jpg
+export DISPLAY=:0 && ./root/desktop.sh
+
+echo "done"
 
 tail -f /dev/null
