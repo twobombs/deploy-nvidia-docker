@@ -37,7 +37,7 @@ RUN apt update && apt install -y google-chrome-stable falkon && apt clean all  &
 RUN apt-get -y remove xfce4-power-manager
 
 # gnome-terminal invocation fix
-RUN apt install -y locales && apt remove -y gnome-terminal && apt purge -y gnome-terminal && apt install -y gnome-terminal 
+RUN apt install -y locales && apt remove -y gnome-terminal && apt purge -y gnome-terminal && apt install -y gnome-terminal && apt clean all
 
 # get desktop background tooling
 COPY teleportation.jpg /
