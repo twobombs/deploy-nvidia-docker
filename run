@@ -17,6 +17,6 @@ pulseaudio -D --system && sunshine &
 export DISPLAY=:0&&xterm -e "xset s off"
 export DISPLAY=:0&&xterm -e "neofetch && tail -f /dev/null" &
 
-export DISPLAY=:0 && ./root/desktop.sh
+export DISPLAY=:0 && /root/desktop.sh
 
 tail -f /dev/null
