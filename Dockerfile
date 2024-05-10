@@ -41,6 +41,8 @@ RUN apt install -y locales && apt remove -y gnome-terminal && apt purge -y gnome
 
 # get desktop background tooling
 COPY teleportation.jpg /
+COPY desktop.sh /root/desktop.sh
+RUN chmod 744 /root/desktop.sh
 RUN apt install -y xwallpaper && apt clean all
 
 #copy run scripts
