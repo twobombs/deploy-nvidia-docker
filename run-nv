@@ -6,16 +6,14 @@ export DISPLAY=:0&&startxfce4&
 
 sleep 10
 
-x0vncserver -display :0 -passwordfile ~/.vnc/passwd&
-/usr/share/novnc/utils/launch.sh --vnc localhost:5900
+x0vncserver -display :0 -passwordfile ~/.vnc/passwd &
+/usr/share/novnc/utils/launch.sh --vnc localhost:5900 &
 
 service xrdp start && xrdp &
 pulseaudio -D --system && sunshine &
 
-export DISPLAY=:0&&xterm -e "xset s off"
+export DISPLAY=:0&&xterm -e "xset s off" &
 export DISPLAY=:0&&xterm -e "neofetch && tail -f /dev/null" &
-
-export DISPLAY=:0 && /root/desktop.sh
 
 echo "done"
 
