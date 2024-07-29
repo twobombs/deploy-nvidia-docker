@@ -24,7 +24,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y x11vnc neofetch 
 RUN cp /usr/share/novnc/vnc.html /usr/share/novnc/index.html && mkdir /root/.vnc
 
 # add system frameworks
-RUN export DEBIAN_FRONTEND=noninteractive && apt-get -y -f install lm-sensors python3-pip clinfo freeglut3 && apt-get clean all && apt -y autoremove
+RUN export DEBIAN_FRONTEND=noninteractive && apt-get -y -f install lm-sensors python3-pip clinfo freeglut3-dev && apt-get clean all && apt -y autoremove
 
 # get chrome-repo in apt
 RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
