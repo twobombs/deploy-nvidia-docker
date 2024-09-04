@@ -19,7 +19,7 @@ RUN add-apt-repository ppa:kisak/kisak-mesa -y && apt update && apt -y upgrade &
 
 # install baseline x, vnc
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -y apt-utils net-tools software-properties-common && dpkg --add-architecture i386 && apt-get update -y && apt-get install -y git wget curl net-tools nvidia-modprobe qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager linux-tools-generic && apt-get clean all && apt -y autoremove
-RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y  --install-recommends xrdp xfce4 xfce4-goodies libsdl1.2-dev mesa-utils libgl1-mesa-dev libegl1-mesa-dev libgles2-mesa-dev && apt-get clean all && apt -y autoremove
+RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y  --install-recommends xrdp xfce4 xfce4-goodies libsdl1.2-dev mesa-utils libgl1-mesa-dev libegl1-mesa-dev libgles2-mesa-dev && apt-get clean all && apt -y autoremove && rm -r /usr/share/themes/Greybird
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y x11vnc neofetch tightvncserver tigervnc-scraping-server novnc xvfb xterm mc lynx open-vm-tools ssh-askpass-gnome && apt-get clean all && apt -y autoremove
 RUN cp /usr/share/novnc/vnc.html /usr/share/novnc/index.html && mkdir /root/.vnc
 
@@ -38,9 +38,6 @@ RUN apt-get -y remove xfce4-power-manager
 
 # gnome-terminal invocation fix
 RUN apt install -y locales && apt remove -y gnome-terminal && apt purge -y gnome-terminal && apt install -y gnome-terminal && apt clean all
-
-# dark default
-RUN rm -r /usr/share/themes/Greybird
 
 # set desktop background
 COPY teleportation.png /usr/share/backgrounds/xfce/xfce-verticals.png
