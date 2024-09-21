@@ -49,7 +49,7 @@ RUN apt-get -y remove xfce4-power-manager
 RUN apt install -y locales && apt remove -y gnome-terminal && apt purge -y gnome-terminal && apt install -y gnome-terminal && apt clean all
 
 # dark default
-RUN rm -r /usr/share/themes/Greybird
+# RUN rm -r /usr/share/themes/Greybird
 
 # get desktop background tooling
 COPY teleportation.png /usr/share/backgrounds/xfce/xfce-verticals.png
