@@ -14,6 +14,7 @@ pulseaudio -D --system && sunshine &
 
 export DISPLAY=:0&&xterm -e "xset s off" &
 export DISPLAY=:0&&xterm -e "neofetch && tail -f /dev/null" &
+export DISPLAY=:0&&exo-open --launch TerminalEmulator &
 
 echo "done"
 
