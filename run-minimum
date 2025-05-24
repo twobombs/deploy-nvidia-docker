@@ -14,6 +14,7 @@ service xrdp start && xrdp &
 
 export DISPLAY=:0&&xterm -e "xset s off" && export HOME=/home/user && export DISPLAY=:0 && xterm -maximized -e "sudo su -c '/bin/bash' -s /bin/bash user"
 export DISPLAY=:0&&xterm -e "neofetch && tail -f /dev/null" &
+export DISPLAY=:0 && google-chrome-stable --disable-fre --no-default-browser-check --no-first-run --no-sandbox --password-store=basic https://gemini.google.com &
 
 echo "done"
 tail -f /dev/null
