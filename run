@@ -17,7 +17,7 @@ pulseaudio -D --system && sunshine &
 export DISPLAY=:0&&xterm -e "xset s off" 
 export DISPLAY=:0&&xterm -e "neofetch && tail -f /dev/null" &
 export DISPLAY=:0&&exo-open --launch TerminalEmulator &
-export DISPLAY=:0 && google-chrome-stable --disable-fre --no-default-browser-check --no-first-run --no-sandbox --password-store=basic https://gemini.google.com &
+export DISPLAY=:0 && google-chrome-stable --disable-fre --no-default-browser-check --no-first-run --no-sandbox --password-store=basic https://gemini.google.com  https://chat.openai.com &
 
 
 tail -f /dev/null
