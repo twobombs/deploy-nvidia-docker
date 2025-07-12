@@ -12,8 +12,8 @@ ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64:${LD_LIBRARY_P
 # fetch AMD ROCm drivers from https://github.com/ROCm/ROCm-docker/blob/master/rocm-terminal/Dockerfile
 # Initialize the image
 # Modify to pre-install dev tools and ROCm packages
-ARG ROCM_VERSION=6.4.1
-ARG AMDGPU_VERSION=6.4.1
+ARG ROCM_VERSION=6.3.4
+ARG AMDGPU_VERSION=6.3.4
 
 ARG APT_PREF
 RUN echo "$APT_PREF" > /etc/apt/preferences.d/rocm-pin-600
