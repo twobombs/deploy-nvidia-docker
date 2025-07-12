@@ -9,11 +9,33 @@ RUN apt install curl && apt clean all && curl -LsSf https://astral.sh/uv/install
 ENV PATH /usr/local/nvidia/bin:${PATH}
 ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64:${LD_LIBRARY_PATH}
 
-# uninstall python3.8 and fetch python 3.9
-#
-# RUN export DEBIAN_FRONTEND=noninteractive && apt remove -y python3 && apt install -y software-properties-common && apt clean all
-# RUN add-apt-repository -y ppa:deadsnakes/ppa
-# RUN apt update && apt install -y python3.9 && ln -sf /usr/bin/python3.9 /usr/bin/python
+# fetch AMD ROCm drivers from https://github.com/ROCm/ROCm-docker/blob/master/rocm-terminal/Dockerfile
+# Initialize the image
+# Modify to pre-install dev tools and ROCm packages
+ARG ROCM_VERSION=6.4.1
+ARG AMDGPU_VERSION=6.4.1
+
+ARG APT_PREF
+RUN echo "$APT_PREF" > /etc/apt/preferences.d/rocm-pin-600
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends ca-certificates curl gnupg && \
+  curl -sL http://repo.radeon.com/rocm/rocm.gpg.key | apt-key add - && \
+  sh -c 'echo deb [arch=amd64] http://repo.radeon.com/rocm/apt/$ROCM_VERSION/ jammy main > /etc/apt/sources.list.d/rocm.list' && \
+  sh -c 'echo deb [arch=amd64] https://repo.radeon.com/amdgpu/$AMDGPU_VERSION/ubuntu jammy main > /etc/apt/sources.list.d/amdgpu.list' && \
+  apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+  sudo \
+  libelf1 \
+  libnuma-dev \
+  build-essential \
+  git \
+  vim-nox \
+  cmake-curses-gui \
+  kmod \
+  file \
+  python3 \
+  python3-pip \
+  rocm-dev && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/*
 
 # install glvnd ( + temp nv repo key fix )
 RUN apt-get clean && \
