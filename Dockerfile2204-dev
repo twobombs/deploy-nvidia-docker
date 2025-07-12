@@ -4,7 +4,7 @@ LABEL com.nvidia.volumes.needed="nvidia_driver"
 
 # upgrades
 RUN apt update && export DEBIAN_FRONTEND=noninteractive && apt -y upgrade && apt clean all
-RUN apt install curl && apt clean all && curl -LsSf https://astral.sh/uv/install.sh | sh
+# RUN apt install -y curl && apt clean all && curl -LsSf https://astral.sh/uv/install.sh | sh
 
 ENV PATH /usr/local/nvidia/bin:${PATH}
 ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64:${LD_LIBRARY_PATH}
