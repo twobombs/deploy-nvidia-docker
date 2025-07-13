@@ -10,7 +10,7 @@ Start X CUDA session
 
 With Nvidia Docker enabled
 ```bash
-docker run --gpus all --device=/dev/dri:/dev/dri -d twobombs/deploy-nvidia-docker
+docker run --gpus all --device=/dev/kfd --device=/dev/dri:/dev/dri -d twobombs/deploy-nvidia-docker
 ````
 
 Docker only
