@@ -1,7 +1,7 @@
 # X-run script for nvidia hosts
 rm /tmp/.X0-lock
 
-Xvfb :0 -screen 0 1920x1080x24+32 -ac&
+Xvfb :0 -screen 0 2560x1440x24+32 -ac&
 export DISPLAY=:0&&startxfce4&
 
 sleep 10
