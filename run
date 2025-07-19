@@ -4,7 +4,7 @@ rm /tmp/.X0-lock
 export __NV_PRIME_RENDER_OFFLOAD=1
 export __GLX_VENDOR_LIBRARY_NAME=nvidia
 
-Xvfb :0 -screen 0 1920x1080x24+32 -ac && service xrdp start &
+Xvfb :0 -screen 0 2560x1440x24+32 -ac && service xrdp start &
 sleep 10
 export DISPLAY=:0&&startxfce4&
 x0vncserver -display :0 -passwordfile /root/.vnc/passwd&
