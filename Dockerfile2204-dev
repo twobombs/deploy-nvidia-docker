@@ -4,7 +4,7 @@ LABEL com.nvidia.volumes.needed="nvidia_driver"
 
 # upgrades
 RUN apt update && export DEBIAN_FRONTEND=noninteractive && apt -y upgrade && apt clean all
-RUN apt install -y curl wget && apt clean all 
+RUN apt install -y curl wget adduser && apt clean all && adduser --disabled-password --gecos "" thereminq
 # RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 
 ENV PATH /usr/local/nvidia/bin:${PATH}
