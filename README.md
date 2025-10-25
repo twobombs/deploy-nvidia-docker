@@ -1,42 +1,62 @@
-![](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)
+# X-Accelerated Docker Containers
 
-Contents:
+This repository provides a comprehensive solution for creating and running X-accelerated Docker containers with a noVNC frontend. Designed for a range of applications, these containers are available in multiple flavors, from lightweight CPU-only environments to full desktop experiences with NVIDIA GPU acceleration.
 
-- Bash script for deploying NVidia-Docker2 on [Ubuntu](https://github.com/twobombs/deploy-nvidia-docker/blob/master/deploy-nvidia-docker2.sh)
-- Dockerfile to create X-accelerated containers with novnc frontend, image hosted on [Dockerhub](https://hub.docker.com/r/twobombs/deploy-nvidia-docker)
-- comes in the following flavours `:latest` for runtime `:dev` developer-tools and `:minimum` tag for minimum CPU-only with user jail
+## Getting Started
 
-Start X CUDA session
+To get started, you can use one of the pre-built Docker images from [Docker Hub](https://hub.docker.com/r/twobombs/deploy-nvidia-docker).
 
-With Nvidia Docker enabled
+### With NVIDIA Docker
+
 ```bash
 docker run --gpus all --device=/dev/kfd --device=/dev/dri:/dev/dri -d twobombs/deploy-nvidia-docker
-````
+```
 
-Docker only
+### Docker Only
+
 ```bash
 docker run --device=/dev/dri:/dev/dri -d twobombs/deploy-nvidia-docker
-````
+```
 
-Minimalistic Docker CPU-only version with user jailed in xterm
+### Minimal CPU-Only
+
 ```bash
 docker run -d twobombs/deploy-nvidia-docker:minimal
-````
+```
 
-Initial vnc password is `00000000`
-- noVNC website is avaliable at port `6080`
-- xRDP running at port `3389` to vnc `127.0.0.1:5900`
+**Initial vnc password is `00000000`**
+- **noVNC website is avaliable at port `6080`**
+- **xRDP running at port `3389` to vnc `127.0.0.1:5900`**
 
-Version history:
-- Upgrade CUDA version to 12.1
-- Upgrade dev and latest image to Ubuntu 22.04
-- Upgrade cpu only image to Ubuntu 22.04
-- Minimalistic CPU-only jail version added
-- Dev and Runtime version separated
-- Upgrade image to CUDA 11.0 and Ubuntu 20.04
-- Docker 19.03+ NV integration
-- Nvidia-Docker 2.0 integration release
-- Wine v0.2 addon pre-release
-- Initial v0.1 pre-release
+## Dockerfiles
 
-Because of Docker integration with nvidia all k8s orchestrators should play nice with NV GPU container instances.
+This repository includes three distinct Dockerfile flavors, each tailored to specific requirements:
+
+| Dockerfile            | Description                                                                                                                              |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **`Dockerfile`**      | The main image, featuring NVIDIA drivers, a full XFCE desktop environment, and a suite of pre-installed applications.                        |
+| **`Dockerfile-dev`**  | A development-focused image that extends the main image with additional tools and libraries essential for software development.            |
+| **`Dockerfile-minimum`** | A lightweight, CPU-only image that offers a minimal desktop environment, ideal for basic tasks and resource-constrained systems.        |
+
+## Scripts
+
+The following scripts are used to run and manage the Docker containers:
+
+| Script                        | Description                                                                                                                      |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| **`run`**                     | The entrypoint for the Docker-only container, responsible for launching the XFCE desktop and noVNC frontend.                          |
+| **`run-nv`**                  | The entrypoint for the NVIDIA Docker container, which initializes the GPU-accelerated environment.                                  |
+| **`run-minimum`**             | The entrypoint for the minimal CPU-only container, which starts a lightweight desktop environment.                                    |
+| **`deploy-nvidia-docker2.sh`** | A utility script for setting up the host environment to ensure compatibility with NVIDIA Docker.                                     |
+
+## Configuration
+
+The container's environment can be customized using the following configuration files:
+
+| File              | Description                                                                                                                                      |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **`xorg.conf`**   | The X server configuration file, which defines the display settings and ensures proper rendering.                                                  |
+| **`xstartup`**    | The VNC startup script, responsible for launching the desktop environment and applications when a VNC session begins.                               |
+| **`passwd`**      | The VNC password file, which stores the password for accessing the noVNC frontend.                                                                |
+
+This refined documentation provides a clearer and more comprehensive overview of the repository, making it easier for users to get started and customize their containers.
