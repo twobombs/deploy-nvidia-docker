@@ -7,7 +7,7 @@ ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64:${LD_LIBRARY_P
 
 # image upgrades
 RUN apt update && apt -y upgrade && apt clean all
-RUN apt install curl && apt clean all && curl -LsSf https://astral.sh/uv/install.sh | sh
+# RUN apt install curl && apt clean all && curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # install glvnd ( temp key fix )
 RUN apt-get clean && \
