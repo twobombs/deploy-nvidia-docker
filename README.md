@@ -1,4 +1,4 @@
-<img width="1536" height="1024" alt="ChatGPT Image Jan 1, 2026, 12_55_47 PM" src="https://github.com/user-attachments/assets/64036380-01d8-4b3a-9152-eff641577d4c" />
+<img width="1016" height="443" alt="Screenshot from 2026-01-01 15-36-30" src="https://github.com/user-attachments/assets/b5c8d613-5dac-484a-baef-0032dfd8e484" />
 
 
 This repository provides a comprehensive solution for creating and running X-accelerated Docker containers with a noVNC frontend. Designed for a range of applications, these containers are available in multiple flavors, from lightweight CPU-only environments to full desktop experiences with NVIDIA GPU acceleration.
